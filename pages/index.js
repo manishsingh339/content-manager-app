@@ -7,7 +7,7 @@ import Footer from "components/Footer";
 
 import { resources } from "api/data";
 
-function Home() {
+function Home({resources}) {
 
   return (
     <Layout>
@@ -21,6 +21,23 @@ function Home() {
       <Footer />
     </Layout>
   )
+}
+
+// export async function getStaticProps(context) {
+// 	return {
+// 		props: {resources}, 
+// 	  }
+// }
+
+export async function getServerSideProps() {
+  const resData = await fetch("http://localhost:3001/api/resources");
+  const data = await resData.json();
+  console.log(data);
+  return {
+    props: {
+      resources: data
+    }
+  }
 }
 
 
