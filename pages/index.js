@@ -5,7 +5,7 @@ import Newsletter from "components/Newsletter";
 import ResourceList from "components/ResourceList";
 import Footer from "components/Footer";
 
-import { resources } from "api/data";
+import { resources } from "pages/api/data";
 
 function Home({resources}) {
 
